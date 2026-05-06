@@ -94,3 +94,10 @@ mod test {
         assert!(!results.get(2u64).unwrap());
     }
 }
+
+// Additional helper: get revocation entry details
+impl RevocationRegistry {
+    pub fn get_entry(env: Env, credential_id: u64) -> Option<RevocationEntry> {
+        env.storage().persistent().get(&credential_id)
+    }
+}
