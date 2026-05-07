@@ -1624,20 +1624,20 @@ The pipeline (`.github/workflows/deploy.yml`) runs on every push to `main`:
 
 ## Roadmap
 
-### Phase 1 — Core Platform (months 1–3)
+### Phase 1 — Core Platform
 - [ ] Soroban contracts: institution registry, credential token, revocation registry
 - [ ] NestJS: auth, institutions, credentials, verification modules
 - [ ] Angular: institution portal, graduate wallet, public verifier
 - [ ] Testnet deployment with 3 pilot institutions
 
-### Phase 2 — Scale & Access (months 4–6)
+### Phase 2 — Scale & Access
 - [ ] Batch issuer contract + CSV bulk upload UI
 - [ ] USSD interface for feature phone credential retrieval
 - [ ] PDF certificate generator with institution branding
 - [ ] Webhook API for ATS/HR system integration
 - [ ] Nigeria, Kenya, Ghana, South Africa launch
 
-### Phase 3 — Ecosystem (months 7–12)
+### Phase 3 — Ecosystem
 - [ ] Professional license renewal on-chain
 - [ ] Cross-institution transcript aggregation
 - [ ] Verified credential job board
