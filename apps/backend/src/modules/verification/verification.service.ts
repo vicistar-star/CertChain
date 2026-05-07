@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CACHE_MANAGER } from '@nestjs/cache-manager';
 import { Cache } from 'cache-manager';
-import { nativeToScVal } from '@stellar/stellar-sdk';
+import { nativeToScVal, xdr } from '@stellar/stellar-sdk';
 import { Credential } from '../credentials/entities/credential.entity';
 import { SorobanService } from '../../stellar/soroban.service';
 import { IpfsService } from '../../ipfs/ipfs.service';
@@ -59,7 +59,7 @@ export class VerificationService {
     const institution = await this.sorobanService.queryContract<any>({
       contractId: process.env.INSTITUTION_REGISTRY_CONTRACT_ID,
       method: 'get_institution',
-      args: [nativeToScVal(onChain.institution, { type: 'address' })],
+      args: [nativeToScVal(onChain.institution, { type: 'string' })],
       callerPublicKey: process.env.PLATFORM_PUBLIC_KEY,
     });
 

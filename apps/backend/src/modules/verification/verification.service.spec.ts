@@ -14,8 +14,8 @@ const mockOnChain = {
   grade: 'First Class',
   issueDateUnix: 1700000000n,
   expiryDateUnix: 0n,
-  institution: 'GINST...',
-  graduate: 'GGRAD...',
+  institution: 'GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN',
+  graduate: 'GBVVJJWAKJHCIBCAFNHFNWXQKJH4BKZMGOCXGPHZEHDXR7GIJ3HMTV4',
   verificationCount: 5n,
   revokedLedger: 0,
   revocationReason: '',
@@ -36,8 +36,7 @@ describe('VerificationService', () => {
         {
           provide: SorobanService,
           useValue: {
-            queryContract: jest
-              .fn()
+            queryContract: jest.fn()
               .mockResolvedValueOnce(mockOnChain)
               .mockResolvedValueOnce({ name: 'Unilag', countryCode: 'NG', accreditationBody: 'NUC' }),
           },

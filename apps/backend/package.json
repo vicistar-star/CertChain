@@ -66,6 +66,9 @@
     "transform": { "^.+\\.(t|j)s$": "ts-jest" },
     "collectCoverageFrom": ["**/*.(t|j)s"],
     "coverageDirectory": "../coverage",
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "moduleNameMapper": {
+      "^kubo-rpc-client$": "<rootDir>/../test/__mocks__/kubo-rpc-client.js"
+    }
   }
 }
