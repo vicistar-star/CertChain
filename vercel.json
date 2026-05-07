@@ -1,0 +1,7 @@
+{
+  "buildCommand": "npm install && npm run build",
+  "outputDirectory": "dist/certchain-frontend/browser",
+  "installCommand": "npm install",
+  "framework": "angular",
+  "rootDirectory": "apps/frontend"
+}
