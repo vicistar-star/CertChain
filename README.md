@@ -219,8 +219,9 @@ certchain-africa/
 │
 ├── docker/
 │   ├── docker-compose.yml
-│   ├── docker-compose.prod.yml
-│   └── Dockerfiles
+│   ├── Dockerfile.backend
+│   ├── Dockerfile.frontend
+│   └── nginx.conf
 │
 ├── docs/
 │   ├── architecture.md
@@ -1477,6 +1478,8 @@ export const environment = {
 
 ## Getting Started
 
+> For a detailed contributor setup guide, see [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ### Prerequisites
 
 - Node.js 20+
@@ -1487,8 +1490,8 @@ export const environment = {
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-org/certchain-africa.git
-cd certchain-africa
+git clone https://github.com/vicistar-star/CertChain.git
+cd CertChain
 ```
 
 ### 2. Start infrastructure
@@ -1555,7 +1558,7 @@ npm run start:dev
 ```bash
 cd apps/frontend
 npm install
-npm run start
+npm start
 # App: http://localhost:4200
 ```
 
@@ -1575,9 +1578,7 @@ npm run test:cov      # Coverage report
 ### Smart Contracts
 
 ```bash
-cd contracts/credential-token   && cargo test
-cd contracts/institution-registry && cargo test
-cd contracts/revocation-registry  && cargo test
+cd contracts && cargo test --lib
 ```
 
 ### Frontend
