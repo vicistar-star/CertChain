@@ -1,6 +1,0 @@
-{
-  "buildCommand": "cd apps/frontend && npm install && npm run build",
-  "outputDirectory": "apps/frontend/dist/certchain-frontend/browser",
-  "installCommand": "echo 'skip root install'",
-  "framework": null
-}
