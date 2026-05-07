@@ -2,11 +2,10 @@ import { Routes } from '@angular/router';
 import { AuthGuard } from './core/guards/auth.guard';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/verify', pathMatch: 'full' },
   {
-    path: 'verify',
+    path: '',
     loadComponent: () =>
-      import('./features/verify/verify.component').then((m) => m.VerifyComponent),
+      import('./features/home/home.component').then((m) => m.HomeComponent),
   },
   {
     path: 'verify/:id',
@@ -22,9 +21,7 @@ export const routes: Routes = [
     path: 'institution',
     canActivate: [AuthGuard],
     loadChildren: () =>
-      import('./features/institution/institution.routes').then(
-        (m) => m.institutionRoutes,
-      ),
+      import('./features/institution/institution.routes').then((m) => m.institutionRoutes),
   },
   {
     path: 'graduate',
@@ -32,5 +29,5 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./features/graduate/graduate.routes').then((m) => m.graduateRoutes),
   },
-  { path: '**', redirectTo: '/verify' },
+  { path: '**', redirectTo: '' },
 ];
