@@ -15,10 +15,25 @@ pub struct BatchCredentialInput {
     pub expiry_date_unix: u64,
 }
 
+// Cross-contract call interface for credential-token
 mod credential_token {
-    soroban_sdk::contractimport!(
-        file = "../target/wasm32-unknown-unknown/release/credential_token.wasm"
-    );
+    use soroban_sdk::{contractclient, Address, Env, String, Symbol};
+
+    #[contractclient(name = "CredentialTokenClient")]
+    pub trait CredentialToken {
+        fn issue(
+            env: Env,
+            institution: Address,
+            graduate: Address,
+            credential_type: Symbol,
+            field_of_study: String,
+            title: String,
+            grade: String,
+            issue_date_unix: u64,
+            expiry_date_unix: u64,
+            metadata_ipfs_hash: String,
+        ) -> u64;
+    }
 }
 
 #[contract]
@@ -49,7 +64,7 @@ impl BatchIssuer {
             .instance()
             .get(&symbol_short!("cred_ctrt"))
             .unwrap();
-        let client = credential_token::Client::new(&env, &cred_contract);
+        let client = credential_token::CredentialTokenClient::new(&env, &cred_contract);
 
         let mut issued_ids: Vec<u64> = Vec::new(&env);
         for input in credentials.iter() {
