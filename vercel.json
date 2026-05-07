@@ -1,7 +1,6 @@
 {
-  "buildCommand": "npm install && npm run build",
-  "outputDirectory": "dist/certchain-frontend/browser",
-  "installCommand": "npm install",
-  "framework": "angular",
-  "rootDirectory": "apps/frontend"
+  "buildCommand": "cd apps/frontend && npm install && npm run build",
+  "outputDirectory": "apps/frontend/dist/certchain-frontend/browser",
+  "installCommand": "echo 'skip root install'",
+  "framework": null
 }
