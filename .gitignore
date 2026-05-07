@@ -37,6 +37,7 @@ coverage/
 
 # Rust
 contracts/target/
+contracts/**/test_snapshots/
 # Note: contracts/Cargo.lock IS committed (reproducible builds)
 
 # Docker volumes (local)
